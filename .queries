@@ -1,4 +1,8 @@
 /Disney/Subsidiaries/Subsidiary[@id="WaltDisneyPictures"]/Movie[Year>=2010]
 /Disney/Subsidiaries/Subsidiary[Movie/Cast/Role/@alias="Iron Man"]/@id
-/Disney/Actors/Actor/BirthPlace[contains(., "England, UK")]
-/Disney/Subsidiaries/Subsidiary[@id="MarvelStudios"]/Movie[Cast/Role/@alias="Iron Man" and "Captain America" and "Hulk" and "Spider-Man"]
+/Disney/Actors/Actor[contains(BirthPlace, "England, UK")]
+/Disney/Subsidiaries/Subsidiary[@id="MarvelStudios"]/Movie[contains("Iron Man" or "Captain America" or "Hulk" or "Spider-Man", Cast/Role/@alias)]
+sum(/Disney/Subsidiaries/Subsidiary/Movie[contains(Name, "Star Wars")]/ScreenTime)
+/Disney/Actors/Actor[contains(BirthPlace, "USA") and not(contains(BirthPlace, "California"))]
+/Disney/Subsidiaries/Subsidiary/Movie[Cast/Role[contains(@name, "Skywalker")]]
+/Disney/Actors/Actor[@id=/Disney/Subsidiaries/Subsidiary/Movie[Name="The Lion King"]/Cast/Role[@name="Simba"]/@actor]

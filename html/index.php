@@ -1,14 +1,19 @@
 <?php
 
+// show all errors
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // define data
 define("DATA", "../Disney.xml");
 define("QUERIES", "../.queries");
 
 // define output
 define("TITLE", "SBA - NTNU 2019 - DB O5");
-define("FORMAT", "<div class='alert alert-info'><h4 class='alert-heading'><strong>Query:</strong> %s</h4><hr><p><strong>Result:</strong> %s</p></div>");
+define("FORMAT", "<div class='alert alert-info'><h4 class='alert-heading'><strong>Query:</strong> %s</h4><hr><p><strong>Result:</strong> %s nodes, %s</p></div>");
 
-require_once("queries.class.php");
+require_once("../lib/queries.class.php");
 
 // load XML document and parse using xpath
 $doc = new DOMDocument();
@@ -34,7 +39,7 @@ foreach (explode("\n", file_get_contents(QUERIES)) as $query) if (!empty($query)
       <header>
           <h1><?= TITLE ?></h1>
       </header>
-      <?php foreach ($queries->get_queries() as $query) printf(FORMAT, $query, $xpath->query($query)->length) ?>
+      <?php foreach ($queries->get_queries() as $query) printf(FORMAT, $query, $length = $xpath->query($query)->length, (!$length) ? "evaluated value: " . $xpath->evaluate($query) : "not evaluated") ?>
       <footer>
           Made by Sondre Benjamin Aasen
       </footer>
