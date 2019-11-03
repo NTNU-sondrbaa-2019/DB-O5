@@ -1,0 +1,4 @@
+/Disney/Subsidiaries/Subsidiary[@id="WaltDisneyPictures"]/Movie[Year>=2010]
+/Disney/Subsidiaries/Subsidiary[Movie/Cast/Role/@alias="Iron Man"]/@id
+/Disney/Actors/Actor/BirthPlace[contains(., "England, UK")]
+/Disney/Subsidiaries/Subsidiary[@id="MarvelStudios"]/Movie[Cast/Role/@alias="Iron Man" and "Captain America" and "Hulk" and "Spider-Man"]

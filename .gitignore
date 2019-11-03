@@ -1,2 +1,5 @@
-Disney.xml
+# IDE config
 .idea
+
+# Data files
+Disney.xml
