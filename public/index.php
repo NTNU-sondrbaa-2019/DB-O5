@@ -8,7 +8,7 @@ define("QUERIES", "../.queries");
 define("TITLE", "SBA - NTNU 2019 - DB O5");
 define("FORMAT", "<div class='alert alert-info'><h4 class='alert-heading'><strong>Query:</strong> %s</h4><hr><p><strong>Result:</strong> %s</p></div>");
 
-require_once ("queries.class.php");
+require_once("queries.class.php");
 
 // load XML document and parse using xpath
 $doc = new DOMDocument();
